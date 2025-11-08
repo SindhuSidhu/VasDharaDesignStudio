@@ -13,7 +13,7 @@
 <div class="container">
   <header>
     <div class="brand">
-      <div class="logo">VD</div>
+      <div class="logo"><img src="../assets/logo.png" style="width:50px;"></div>
       <h1>VasDhara Design Studio</h1>
     </div>
     <nav>
@@ -26,7 +26,7 @@
 
   <section>
     <h3>3D Model Viewer</h3>
-    <div id="viewer">Loading 3D Model...</div>
+    <div id="viewer">3D Model will render here</div>
   </section>
 
   <footer>
@@ -43,8 +43,8 @@ document.getElementById('year').textContent=new Date().getFullYear();
 const urlParams = new URLSearchParams(window.location.search);
 const planId = urlParams.get('plan') || 'plan1';
 const viewer=document.getElementById('viewer');
-viewer.textContent=`3D Model for ${planId} will be rendered here.`;
-// TODO: Integrate Three.js loader for GLTF / OBJ from backend
+viewer.textContent=`3D Model for ${planId} will render here.`;
+// TODO: integrate Three.js loader for actual AI generated 3D
 </script>
 </body>
 </html>
