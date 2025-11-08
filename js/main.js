@@ -1,4 +1,4 @@
-// Smooth scroll for sections
+// Smooth scroll
 document.querySelectorAll('nav a').forEach(a=>{
   a.addEventListener('click', e=>{
     e.preventDefault();
@@ -6,7 +6,7 @@ document.querySelectorAll('nav a').forEach(a=>{
   });
 });
 
-// Fade-in sections on scroll
+// Fade-in sections
 const sections = document.querySelectorAll('section');
 window.addEventListener('scroll', ()=>{
   sections.forEach(s=>{
@@ -22,8 +22,8 @@ document.getElementById('whatsapp-btn').addEventListener('click', ()=>{
   window.open('https://wa.me/9876543210','_blank');
 });
 
-// Placeholder: connect 2D plan API
-async function submitPlanner(formId, containerId){
+// Planner form handler
+function submitPlanner(formId, containerId){
   const form = document.getElementById(formId);
   form.addEventListener('submit', async e=>{
     e.preventDefault();
@@ -45,13 +45,21 @@ async function submitPlanner(formId, containerId){
     plans.forEach(p=>{
       const div = document.createElement('div');
       div.classList.add('project');
-      div.innerHTML=`<img src="${p.image}" style="width:100%;border-radius:10px"><button onclick="view3D('${p.id}')">View 3D</button>`;
+      div.innerHTML = `<img src="${p.image}" style="width:100%;border-radius:12px"><button class="cta" onclick="view3D('${p.id}')">View 3D</button>`;
       container.appendChild(div);
     });
   });
 }
 
-// Placeholder: view 3D
+// View 3D
 function view3D(planId){
-  window.location.href=`pages/3dviewer.html?plan=${planId}`;
+  window.location.href=`3dviewer.html?plan=${planId}`;
+}
+
+// Contact form
+function handleContact(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  document.getElementById('formMsg').textContent=`Thanks ${name}, your message has been received!`;
+  document.getElementById('contactForm').reset();
 }
