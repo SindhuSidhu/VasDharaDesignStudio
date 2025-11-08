@@ -1,0 +1,39 @@
+:root{
+  --accent:#0f766e;
+  --accent-2:#0ea5a4;
+  --gold:#FFD700;
+  --bg:#fafafa;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --radius:14px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#0f172a;line-height:1.5;scroll-behavior:smooth;}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(5px);z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 20px rgba(15,118,110,0.18);}
+.brand h1{margin:0;font-size:20px;letter-spacing:0.2px;}
+nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600;}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:36px 0;}
+.hero h2{font-size:38px;margin:0 0 12px;}
+.tag{color:var(--accent);font-weight:700;}
+.lead{color:var(--muted);margin-bottom:18px;}
+.cta{display:inline-block;padding:12px 18px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:700;transition:0.3s;}
+.cta:hover{background:var(--accent-2);}
+section{margin:40px 0;opacity:0;transform:translateY(20px);transition:1s;}
+section.visible{opacity:1;transform:translateY(0);}
+.services,.portfolio{display:grid;gap:16px;}
+.services{grid-template-columns:repeat(3,1fr);}
+.portfolio{grid-template-columns:repeat(3,1fr);}
+.service,.project{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,17,26,0.05);transition:0.3s;}
+.service:hover,.project:hover{transform:translateY(-5px);}
+.contact-card{background:linear-gradient(180deg,#ffffff,rgba(255,255,255,0.7));padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(10,10,10,0.04);}
+input,textarea{padding:12px;border-radius:8px;border:1px solid #e6e6e9;font-size:14px;width:100%;}
+button{padding:12px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:700;cursor:pointer;}
+footer{padding:28px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.floating-whatsapp{position:fixed;bottom:28px;right:28px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;justify-content:center;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,0.2);z-index:999;}
+.floating-whatsapp img{width:32px;height:32px;}
+@media (max-width:920px){.hero{grid-template-columns:1fr;}.services,.portfolio{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:600px){.services,.portfolio{grid-template-columns:1fr}nav{margin-top:10px;}}
