@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Viewer - VasDhara Design Studio</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+#viewer{width:100%;height:600px;background:#f0f0f0;border-radius:12px;display:flex;justify-content:center;align-items:center;}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="../assets/logo.png" style="width:50px;"></div>
+      <h1>VasDhara Design Studio</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="modern.html">Modern</a>
+      <a href="traditional.html">Traditional</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section>
+    <h3>3D Model Viewer</h3>
+    <div id="viewer">3D Model will render here</div>
+  </section>
+
+  <footer>
+    <div>© <span id="year"></span> VasDhara Design Studio</div>
+    <div>Designed with ♥ by VasDhara</div>
+  </footer>
+</div>
+
+<div class="floating-whatsapp" id="whatsapp-btn"><img src="../assets/whatsapp.png"></div>
+<script src="../js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.min.js"></script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const urlParams = new URLSearchParams(window.location.search);
+const planId = urlParams.get('plan') || 'plan1';
+const viewer=document.getElementById('viewer');
+viewer.textContent=`3D Model for ${planId} will render here.`;
+// TODO: integrate Three.js loader for actual AI generated 3D
+</script>
+</body>
+</html>
