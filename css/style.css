@@ -30,7 +30,7 @@ section.visible{opacity:1;transform:translateY(0);}
 .service,.project{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,17,26,0.05);transition:0.3s;}
 .service:hover,.project:hover{transform:translateY(-5px);}
 .contact-card{background:linear-gradient(180deg,#ffffff,rgba(255,255,255,0.7));padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(10,10,10,0.04);}
-input,textarea{padding:12px;border-radius:8px;border:1px solid #e6e6e9;font-size:14px;width:100%;}
+input,textarea,select{padding:12px;border-radius:8px;border:1px solid #e6e6e9;font-size:14px;width:100%;margin-bottom:10px;}
 button{padding:12px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:700;cursor:pointer;}
 footer{padding:28px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
 .floating-whatsapp{position:fixed;bottom:28px;right:28px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;justify-content:center;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,0.2);z-index:999;}
