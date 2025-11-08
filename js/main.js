@@ -1,65 +1,44 @@
-// Smooth scroll
-document.querySelectorAll('nav a').forEach(a=>{
-  a.addEventListener('click', e=>{
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+// Floating WhatsApp Button
+const whatsappBtn = document.getElementById('whatsapp-btn');
+if(whatsappBtn){
+  whatsappBtn.addEventListener('click',()=>window.open('https://wa.me/919876543210','_blank'));
+}
+
+// Fade-in effect on scroll
+const faders = document.querySelectorAll('.hero, .service, .project, .contact-card');
+const appearOptions = {threshold:0.2,rootMargin:"0px 0px -50px 0px"};
+const appearOnScroll = new IntersectionObserver(function(entries,appearOnScroll){
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    entry.target.classList.add('fade-in');
+    appearOnScroll.unobserve(entry.target);
   });
-});
+},appearOptions);
+faders.forEach(fader=>appearOnScroll.observe(fader));
 
-// Fade-in sections
-const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', ()=>{
-  sections.forEach(s=>{
-    const top = s.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      s.classList.add('visible');
-    }
-  });
-});
-
-// WhatsApp floating button
-document.getElementById('whatsapp-btn').addEventListener('click', ()=>{
-  window.open('https://wa.me/9876543210','_blank');
-});
-
-// Planner form handler
-function submitPlanner(formId, containerId){
-  const form = document.getElementById(formId);
-  form.addEventListener('submit', async e=>{
+// Planner 2D placeholder
+function submitPlanner(formId,resultId){
+  const form=document.getElementById(formId);
+  if(!form)return;
+  form.addEventListener('submit',function(e){
     e.preventDefault();
-    const data = {
-      length: form.length.value,
-      width: form.width.value,
-      bhk: form.bhk.value,
-      style: form.style.value,
-      requirements: form.requirements.value
-    };
-    const res = await fetch('http://localhost:5000/generate-2d',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(data)
-    });
-    const plans = await res.json();
-    const container = document.getElementById(containerId);
-    container.innerHTML = '';
-    plans.forEach(p=>{
-      const div = document.createElement('div');
-      div.classList.add('project');
-      div.innerHTML = `<img src="${p.image}" style="width:100%;border-radius:12px"><button class="cta" onclick="view3D('${p.id}')">View 3D</button>`;
-      container.appendChild(div);
-    });
+    const data = Object.fromEntries(new FormData(form).entries());
+    const output=`<div style="padding:12px;background:#f0f0f0;border-radius:8px;">
+      <strong>2D Plan Generated:</strong><br>
+      Style: ${data.style}<br>
+      BHK: ${data.bhk}<br>
+      Plot: ${data.length} x ${data.width} ft<br>
+      Requirements: ${data.requirements || 'None'}
+      <br><a href="/VasDharaDesignStudio/pages/3dviewer.html?plan=plan1" target="_blank">View 3D Model</a>
+    </div>`;
+    document.getElementById(resultId).innerHTML=output;
   });
 }
 
-// View 3D
-function view3D(planId){
-  window.location.href=`3dviewer.html?plan=${planId}`;
-}
-
-// Contact form
+// Contact Form placeholder
 function handleContact(e){
   e.preventDefault();
   const name=document.getElementById('name').value;
-  document.getElementById('formMsg').textContent=`Thanks ${name}, your message has been received!`;
+  document.getElementById('formMsg').textContent=`Thanks ${name}! We received your message.`;
   document.getElementById('contactForm').reset();
 }
