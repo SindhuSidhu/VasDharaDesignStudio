@@ -10,12 +10,13 @@
 <div class="container">
   <header>
     <div class="brand">
-      <div class="logo">VD</div>
+      <div class="logo"><img src="../assets/logo.png" style="width:50px;"></div>
       <h1>VasDhara Design Studio</h1>
     </div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="#planner">Planner</a>
+      <a href="modern.html">Modern</a>
+      <a href="traditional.html">Traditional</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -24,7 +25,7 @@
     <img src="../assets/trad-hero.jpg" style="width:100%;border-radius:12px;">
     <div>
       <h2>Traditional Home Designs</h2>
-      <p class="lead">Classic traditional layouts with rich heritage aesthetics and functional spaces.</p>
+      <p class="lead">Classic layouts with rich heritage aesthetics and functional spaces.</p>
     </div>
   </section>
 
@@ -44,6 +45,15 @@
     <div id="planResults" style="margin-top:20px;"></div>
   </section>
 
+  <section id="portfolio">
+    <h3>Our Projects</h3>
+    <div class="portfolio">
+      <div class="project">Heritage Villa</div>
+      <div class="project">Temple-style Interiors</div>
+      <div class="project">Courtyard Home</div>
+    </div>
+  </section>
+
   <footer>
     <div>© <span id="year"></span> VasDhara Design Studio</div>
     <div>Designed with ♥ by VasDhara</div>
@@ -52,7 +62,9 @@
 
 <div class="floating-whatsapp" id="whatsapp-btn"><img src="../assets/whatsapp.png"></div>
 <script src="../js/main.js"></script>
-<script>document.getElementById('year').textContent=new Date().getFullYear();
-submitPlanner('plannerForm','planResults');</script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+submitPlanner('plannerForm','planResults');
+</script>
 </body>
 </html>
