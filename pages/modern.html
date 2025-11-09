@@ -3,82 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern Planner | VasDhara Design Studio</title>
-<link rel="stylesheet" href="style.css">
+<title>Modern Designs | VasDhara</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 <header class="navbar">
-  <img src="assets/logo.png" alt="VasDhara Logo" class="logo">
+  <img src="../assets/logo.png" alt="VasDhara Logo" class="logo">
   <nav>
-    <a href="index.html">Home</a>
+    <a href="../index.html">Home</a>
     <a href="modern.html" class="active">Modern</a>
     <a href="traditional.html">Traditional</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="hero" style="background-image:url('assets/modern-hero.jpg');">
+<section class="hero" style="background-image:url('../assets/modern-hero.jpg');">
   <div class="hero-content fade-in">
-    <h1>Modern House Planner</h1>
-    <p>Enter your requirements to visualize your dream home in 2D & 3D</p>
+    <h1>Modern Luxury Designs</h1>
+    <p>Step-by-step planner to create your dream modern home</p>
   </div>
 </section>
 
 <section class="section fade-in">
-  <h2>Enter Plot & House Details</h2>
-  <form id="modernPlannerForm">
-    <!-- Step 1: Plot details -->
+  <h2>Create Your 2D Plan</h2>
+  <form id="plannerFormModern">
+    <!-- Step 1: Plot Details -->
     <div class="step step-active">
       <h3>Plot Details</h3>
-      <input type="number" name="north" placeholder="North side length (m)" required>
-      <input type="number" name="south" placeholder="South side length (m)" required>
-      <input type="number" name="east" placeholder="East side length (m)" required>
-      <input type="number" name="west" placeholder="West side length (m)" required>
+      <input type="number" name="north" placeholder="North Side Length (m)" required>
+      <input type="number" name="south" placeholder="South Side Length (m)" required>
+      <input type="number" name="east" placeholder="East Side Length (m)" required>
+      <input type="number" name="west" placeholder="West Side Length (m)" required>
       <select name="orientation" required>
-        <option value="">Plot Orientation</option>
-        <option value="North">North</option>
-        <option value="South">South</option>
-        <option value="East">East</option>
-        <option value="West">West</option>
+        <option value="">Select Orientation</option>
+        <option value="north">North Facing</option>
+        <option value="south">South Facing</option>
+        <option value="east">East Facing</option>
+        <option value="west">West Facing</option>
       </select>
       <button type="button" class="nextBtn">Next</button>
     </div>
-
-    <!-- Step 2: House requirements -->
+    <!-- Step 2: House Requirements -->
     <div class="step">
       <h3>House Requirements</h3>
-      <input type="number" name="bhk" placeholder="Number of BHK" required>
-      <label><input type="checkbox" name="pooja"> Pooja Room Required</label>
+      <select name="bhk" required>
+        <option value="">Select BHK</option>
+        <option value="2BHK">2BHK</option>
+        <option value="3BHK">3BHK</option>
+      </select>
+      <label><input type="checkbox" name="pooja"> Pooja Room</label>
       <label><input type="checkbox" name="parking"> Parking Required</label>
-      <label><input type="checkbox" name="compound_wall"> Compound Wall Required</label>
-      <input type="text" name="additional" placeholder="Additional Requirements">
-      <div class="floor-icons">
-        <div class="floor-icon" data-value="1">1</div>
-        <div class="floor-icon" data-value="2">2</div>
-        <div class="floor-icon" data-value="3">3</div>
-        <div class="floor-icon" data-value="4">4</div>
-      </div>
+      <input type="number" name="floors" placeholder="Number of Floors" required>
+      <label><input type="checkbox" name="compound"> Compound Wall Required</label>
+      <textarea name="special" placeholder="Special requirements / comments"></textarea>
       <button type="button" class="prevBtn">Previous</button>
       <button type="button" class="nextBtn">Next</button>
     </div>
-
-    <!-- Step 3: Review -->
-    <div class="step" id="reviewDetails"></div>
-
-    <button type="submit">Confirm & View 2D Plans</button>
+    <!-- Step 3: Review & Submit -->
+    <div class="step">
+      <h3>Review & Submit</h3>
+      <div id="reviewDetails"></div>
+      <button type="button" class="prevBtn">Previous</button>
+      <button type="submit">Generate 2D Plan</button>
+    </div>
   </form>
 </section>
 
-<footer>
-  <p>© <span id="year"></span> VasDhara Design Studio</p>
+<footer class="fade-in">
+  <p>© <span id="year"></span> VasDhara Design Studio | East Street, Coimbatore | +91 9876543210 | vasdharadesignstudio@gmail.com</p>
 </footer>
 
 <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float">
-  <img src="assets/whatsapp.png" alt="WhatsApp">
+  <img src="../assets/whatsapp.png" alt="WhatsApp">
 </a>
 
-<script src="main.js"></script>
+<script src="../js/main.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
