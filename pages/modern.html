@@ -25,13 +25,13 @@
   <img src="/VasDharaDesignStudio/assets/modern-hero.jpg" style="width:100%;border-radius:12px;">
   <div>
     <h2>Modern Home Designs</h2>
-    <p class="lead">Sleek, contemporary layouts with open spaces, natural light, and smart design.</p>
+    <p class="lead">Luxury modern layouts with open spaces, minimalist interiors, and smart functionality.</p>
   </div>
 </section>
 
 <section id="planner">
   <h3>Design Your Modern Home</h3>
-  <form id="plannerFormModern">
+  <form id="plannerForm">
     <input type="number" name="length" placeholder="Plot Length (ft)" required>
     <input type="number" name="width" placeholder="Plot Width (ft)" required>
     <input type="number" name="bhk" placeholder="BHK (2,3,4)" required>
@@ -40,19 +40,30 @@
       <option value="Traditional">Traditional</option>
     </select>
     <textarea name="requirements" rows="4" placeholder="Special Requirements"></textarea>
-    <button type="submit">Generate 2D Plans</button>
+    <button type="submit">Generate 2D Plan</button>
   </form>
-
   <div id="planResults" style="margin-top:20px;"></div>
 </section>
 
 <section id="portfolio">
   <h3>Our Modern Projects</h3>
   <div class="portfolio">
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern1.jpg" alt="Modern Residence"></div>
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern2.jpg" alt="Luxury Apartment"></div>
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern3.jpg" alt="Office Renovation"></div>
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern4.jpg" alt="Villa Extension"></div>
+    <div class="project">
+      <img src="/VasDharaDesignStudio/assets/modern1.jpg" alt="Modern Villa">
+      <div class="project-caption">Modern Villa</div>
+    </div>
+    <div class="project">
+      <img src="/VasDharaDesignStudio/assets/modern2.jpg" alt="Luxury Apartment">
+      <div class="project-caption">Luxury Apartment</div>
+    </div>
+    <div class="project">
+      <img src="/VasDharaDesignStudio/assets/modern3.jpg" alt="Office Interior">
+      <div class="project-caption">Office Interior</div>
+    </div>
+    <div class="project">
+      <img src="/VasDharaDesignStudio/assets/modern4.jpg" alt="Modern Café">
+      <div class="project-caption">Modern Café</div>
+    </div>
   </div>
 </section>
 
@@ -63,47 +74,10 @@
 </div>
 
 <div class="floating-whatsapp" id="whatsapp-btn"><img src="/VasDharaDesignStudio/assets/whatsapp.png"></div>
-
 <script src="/VasDharaDesignStudio/js/main.js"></script>
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Planner form submit
-document.getElementById('plannerFormModern').addEventListener('submit', function(e){
-  e.preventDefault();
-  const data = {
-    length: this.length.value,
-    width: this.width.value,
-    bhk: this.bhk.value,
-    style: this.style.value,
-    requirements: this.requirements.value
-  };
-  generate2DPlans(data);
-});
-
-// Function to simulate multiple 2D plans
-function generate2DPlans(data){
-  const plans = [
-    "/VasDharaDesignStudio/assets/modern2d1.png",
-    "/VasDharaDesignStudio/assets/modern2d2.png",
-    "/VasDharaDesignStudio/assets/modern2d3.png"
-  ];
-  let html = '<h4>Select a 2D Floor Plan:</h4><div class="plan-options">';
-  plans.forEach((plan, idx)=>{
-    html += `<div class="plan" onclick="selectPlan('${plan}')">
-               <img src="${plan}" style="width:200px;border:2px solid #ccc;margin:5px;">
-             </div>`;
-  });
-  html += '</div>';
-  document.getElementById('planResults').innerHTML = html;
-}
-
-// When user selects a plan
-function selectPlan(plan){
-  document.getElementById('planResults').innerHTML = 
-    `<p>Selected plan:</p><img src="${plan}" style="width:400px;"><br>` +
-    `<a href="/VasDharaDesignStudio/pages/3dviewer.html?plan=${encodeURIComponent(plan)}" target="_blank">View 3D Model</a>`;
-}
+document.getElementById('year').textContent=new Date().getFullYear();
+submitPlanner('plannerForm','planResults');
 </script>
 </body>
 </html>
