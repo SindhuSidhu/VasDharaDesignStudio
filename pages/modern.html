@@ -3,77 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern Home - VasDhara</title>
-<link rel="stylesheet" href="/VasDharaDesignStudio/css/style.css">
+<title>Modern Designs - VasDhara Design Studio</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <div class="container">
 <header>
   <div class="brand">
-    <div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png"></div>
+    <img src="../assets/logo.png" class="logo" alt="VasDhara Logo">
     <h1>VasDhara Design Studio</h1>
   </div>
   <nav>
-    <a href="/VasDharaDesignStudio/index.html">Home</a>
-    <a href="/VasDharaDesignStudio/pages/modern.html">Modern</a>
-    <a href="/VasDharaDesignStudio/pages/traditional.html">Traditional</a>
-    <a href="/VasDharaDesignStudio/pages/contact.html">Contact</a>
+    <a href="../index.html">Home</a>
+    <a href="modern.html">Modern</a>
+    <a href="traditional.html">Traditional</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="fade-in hero">
-  <img src="/VasDharaDesignStudio/assets/modern-hero.jpg" alt="Modern Home">
-  <h2>Modern Home Designs</h2>
-  <p>Sleek, contemporary layouts with optimal space usage and aesthetics.</p>
+<section class="hero fade-in" style="background:url('../assets/modern-hero.jpg') center/cover no-repeat;">
+  <h2>Modern Luxury Designs</h2>
+  <p>Elegant and contemporary spaces tailored to your lifestyle</p>
 </section>
 
-<section id="planner" class="fade-in">
-  <h3>Design Your Modern Home</h3>
-  <form id="plannerFormModern" class="wizard">
+<section class="fade-in">
+  <h3>Choose Your Plan</h3>
+  <form id="plannerFormModern">
+    <!-- Step 1: Plot Details -->
     <div class="step step-active">
-      <h4>Step 1: Plot Details</h4>
-      <input type="number" name="lengthNorth" placeholder="North Side Length" required>
-      <input type="number" name="lengthSouth" placeholder="South Side Length" required>
-      <input type="number" name="lengthEast" placeholder="East Side Length" required>
-      <input type="number" name="lengthWest" placeholder="West Side Length" required>
-      <select name="orientation">
-        <option value="North">North Facing</option>
-        <option value="South">South Facing</option>
-        <option value="East">East Facing</option>
-        <option value="West">West Facing</option>
+      <h4>Plot Details</h4>
+      <input type="number" name="north" placeholder="North Side Length (m)" required>
+      <input type="number" name="south" placeholder="South Side Length (m)" required>
+      <input type="number" name="east" placeholder="East Side Length (m)" required>
+      <input type="number" name="west" placeholder="West Side Length (m)" required>
+      <select name="orientation" required>
+        <option value="">Select Orientation</option>
+        <option value="north">North Facing</option>
+        <option value="south">South Facing</option>
+        <option value="east">East Facing</option>
+        <option value="west">West Facing</option>
       </select>
       <button type="button" class="nextBtn">Next</button>
     </div>
+
+    <!-- Step 2: House Details -->
     <div class="step">
-      <h4>Step 2: House Requirements</h4>
-      <input type="number" name="bhk" placeholder="Number of BHK" required>
-      <select name="vastu"><option value="Yes">Vastu</option><option value="No">No</option></select>
-      <select name="pooja"><option value="Yes">Pooja Room</option><option value="No">No</option></select>
-      <input type="text" name="additionalRooms" placeholder="Additional Rooms">
+      <h4>House Requirements</h4>
+      <select name="bhk" required>
+        <option value="">Select BHK</option>
+        <option value="2BHK">2BHK</option>
+        <option value="3BHK">3BHK</option>
+      </select>
+      <label><input type="checkbox" name="pooja"> Pooja Room</label>
+      <label><input type="checkbox" name="parking"> Parking Required</label>
       <input type="number" name="floors" placeholder="Number of Floors" required>
-      <select name="parking"><option value="Yes">Parking</option><option value="No">No</option></select>
-      <select name="compoundWall"><option value="Yes">Compound Wall</option><option value="No">No</option></select>
-      <textarea name="requirements" placeholder="Any special requirements"></textarea>
       <button type="button" class="prevBtn">Previous</button>
       <button type="button" class="nextBtn">Next</button>
     </div>
+
+    <!-- Step 3: Review & Submit -->
     <div class="step">
-      <h4>Step 3: Review & Generate 2D Plans</h4>
+      <h4>Review & Submit</h4>
       <div id="reviewDetails"></div>
       <button type="button" class="prevBtn">Previous</button>
-      <button type="submit">Generate 2D Plans</button>
+      <button type="submit">Generate 2D Plan</button>
     </div>
   </form>
-</section>
-
-<section id="portfolio" class="fade-in">
-  <h3>Our Modern Projects</h3>
-  <div class="portfolio">
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern1.jpg"><span>Modern Villa - Open Space</span></div>
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern2.jpg"><span>Luxury Apartment - City View</span></div>
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern3.jpg"><span>Modern Residence - Minimalist</span></div>
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern4.jpg"><span>Contemporary Office - Glass Facade</span></div>
-  </div>
 </section>
 
 <footer class="fade-in">
@@ -81,8 +76,11 @@
   <div>Designed with ♥ by VasDhara</div>
 </footer>
 
-<div class="floating-whatsapp" id="whatsapp-btn"><img src="/VasDharaDesignStudio/assets/whatsapp.png"></div>
-<script src="/VasDharaDesignStudio/js/main.js"></script>
+<div class="floating-whatsapp" id="whatsapp-btn">
+  <img src="../assets/whatsapp.png" alt="WhatsApp">
+</div>
+
+<script src="../js/main.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
