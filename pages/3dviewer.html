@@ -10,7 +10,7 @@
 <div class="container">
 <header>
   <div class="brand">
-    <div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png" style="width:50px;"></div>
+    <img src="/VasDharaDesignStudio/assets/logo.png" style="width:50px;">
     <h1>VasDhara Design Studio</h1>
   </div>
   <nav>
@@ -23,19 +23,23 @@
 
 <section style="margin:40px 0;text-align:center;">
   <h2>3D Model Viewer</h2>
-  <p>This is a placeholder for the 3D house model generated from your 2D plan.</p>
-  <div style="width:100%;height:400px;background:#eee;display:flex;align-items:center;justify-content:center;">
-    <p>3D Model Display Here</p>
+  <div id="viewer" style="width:100%;height:500px;background:#eee;display:flex;align-items:center;justify-content:center;">
+    Loading 3D Model...
   </div>
 </section>
 
 <footer>
   <div>© <span id="year"></span> VasDhara Design Studio</div>
-  <div>Designed with ♥ by VasDhara</div>
 </footer>
+</div>
 
-<div class="floating-whatsapp" id="whatsapp-btn"><img src="/VasDharaDesignStudio/assets/whatsapp.png"></div>
-<script src="/VasDharaDesignStudio/js/main.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const urlParams = new URLSearchParams(window.location.search);
+const plan = urlParams.get('plan');
+if(plan){
+  document.getElementById('viewer').innerHTML = `<p>Selected Plan: <br><img src="${plan}" style="width:400px;"></p>`;
+}
+</script>
 </body>
 </html>
