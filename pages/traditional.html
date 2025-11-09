@@ -25,7 +25,7 @@
   <img src="/VasDharaDesignStudio/assets/trad-hero.jpg" style="width:100%;border-radius:12px;">
   <div>
     <h2>Traditional Home Designs</h2>
-    <p class="lead">Classic, timeless layouts with warm interiors, cultural elements, and harmony with nature.</p>
+    <p class="lead">Timeless, classic layouts with cultural touches and warm aesthetics.</p>
   </div>
 </section>
 
@@ -40,30 +40,19 @@
       <option value="Modern">Modern</option>
     </select>
     <textarea name="requirements" rows="4" placeholder="Special Requirements"></textarea>
-    <button type="submit">Generate 2D Plan</button>
+    <button type="submit">Generate 2D Plans</button>
   </form>
-  <div id="planResultsTrad" style="margin-top:20px;"></div>
+
+  <div id="planResults" style="margin-top:20px;"></div>
 </section>
 
 <section id="portfolio">
   <h3>Our Traditional Projects</h3>
   <div class="portfolio">
-    <div class="project">
-      <img src="/VasDharaDesignStudio/assets/trad1.jpg" alt="Traditional Villa">
-      <div class="project-caption">Traditional Villa</div>
-    </div>
-    <div class="project">
-      <img src="/VasDharaDesignStudio/assets/trad2.jpg" alt="Heritage Home">
-      <div class="project-caption">Heritage Home</div>
-    </div>
-    <div class="project">
-      <img src="/VasDharaDesignStudio/assets/trad3.jpg" alt="Temple Inspired Home">
-      <div class="project-caption">Temple Inspired Home</div>
-    </div>
-    <div class="project">
-      <img src="/VasDharaDesignStudio/assets/trad4.jpg" alt="Courtyard Villa">
-      <div class="project-caption">Courtyard Villa</div>
-    </div>
+    <div class="project"><img src="/VasDharaDesignStudio/assets/trad1.jpg" alt="Traditional Home 1"></div>
+    <div class="project"><img src="/VasDharaDesignStudio/assets/trad2.jpg" alt="Traditional Home 2"></div>
+    <div class="project"><img src="/VasDharaDesignStudio/assets/trad3.jpg" alt="Traditional Home 3"></div>
+    <div class="project"><img src="/VasDharaDesignStudio/assets/trad4.jpg" alt="Traditional Home 4"></div>
   </div>
 </section>
 
@@ -74,10 +63,47 @@
 </div>
 
 <div class="floating-whatsapp" id="whatsapp-btn"><img src="/VasDharaDesignStudio/assets/whatsapp.png"></div>
+
 <script src="/VasDharaDesignStudio/js/main.js"></script>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
-submitPlanner('plannerFormTrad','planResultsTrad');
+
+// Planner form submit
+document.getElementById('plannerFormTrad').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = {
+    length: this.length.value,
+    width: this.width.value,
+    bhk: this.bhk.value,
+    style: this.style.value,
+    requirements: this.requirements.value
+  };
+  generate2DPlans(data);
+});
+
+// Function to simulate multiple 2D plans for Traditional style
+function generate2DPlans(data){
+  const plans = [
+    "/VasDharaDesignStudio/assets/trad2d1.png",
+    "/VasDharaDesignStudio/assets/trad2d2.png",
+    "/VasDharaDesignStudio/assets/trad2d3.png"
+  ];
+  let html = '<h4>Select a 2D Floor Plan:</h4><div class="plan-options">';
+  plans.forEach((plan, idx)=>{
+    html += `<div class="plan" onclick="selectPlan('${plan}')">
+               <img src="${plan}" style="width:200px;border:2px solid #ccc;margin:5px;">
+             </div>`;
+  });
+  html += '</div>';
+  document.getElementById('planResults').innerHTML = html;
+}
+
+// When user selects a plan
+function selectPlan(plan){
+  document.getElementById('planResults').innerHTML = 
+    `<p>Selected plan:</p><img src="${plan}" style="width:400px;"><br>` +
+    `<a href="/VasDharaDesignStudio/pages/3dviewer.html?plan=${encodeURIComponent(plan)}" target="_blank">View 3D Model</a>`;
+}
 </script>
 </body>
 </html>
