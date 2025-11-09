@@ -4,82 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VasDhara Design Studio</title>
-<link rel="stylesheet" href="/VasDharaDesignStudio/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
-  <!-- Header -->
-  <header>
-    <div class="brand">
-      <div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png" style="width:50px;"></div>
-      <h1>VasDhara Design Studio</h1>
-    </div>
-    <nav>
-      <a href="/VasDharaDesignStudio/index.html">Home</a>
-      <a href="/VasDharaDesignStudio/pages/modern.html">Modern</a>
-      <a href="/VasDharaDesignStudio/pages/traditional.html">Traditional</a>
-      <a href="/VasDharaDesignStudio/pages/contact.html">Contact</a>
-    </nav>
-  </header>
+<header>
+  <div class="brand">
+    <div class="logo"><img src="assets/logo.png"></div>
+    <h1>VasDhara Design Studio</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pages/modern.html">Modern</a>
+    <a href="pages/traditional.html">Traditional</a>
+    <a href="pages/contact.html">Contact</a>
+  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="/VasDharaDesignStudio/assets/hero-lux1.jpg" style="width:100%;border-radius:12px;">
-    <div>
-      <h2>Designing spaces that <span class="tag">flow with life</span></h2>
-      <p class="lead">Blending modern aesthetics with practical engineering — delivering residential, commercial, and interior solutions that feel timeless.</p>
-      <a class="cta" href="/VasDharaDesignStudio/pages/contact.html">Get a Consultation</a>
-    </div>
-  </section>
+<section class="hero">
+  <img src="assets/hero-lux1.jpg" style="width:100%;border-radius:12px;">
+  <h2>Luxury Architecture & Interiors</h2>
+  <p>Creating spaces that flow with life and aesthetics.</p>
+</section>
 
-  <!-- Highlights Section -->
-  <section id="highlights">
-    <h3>Our Expertise</h3>
-    <div class="services">
-      <div class="service">
-        <h4>Modern Designs</h4>
-        <img src="/VasDharaDesignStudio/assets/modern-thumb.jpg" style="width:100%;border-radius:12px;">
-        <a class="cta" href="/VasDharaDesignStudio/pages/modern.html">Explore Modern</a>
-      </div>
-      <div class="service">
-        <h4>Traditional Designs</h4>
-        <img src="/VasDharaDesignStudio/assets/traditional-thumb.jpg" style="width:100%;border-radius:12px;">
-        <a class="cta" href="/VasDharaDesignStudio/pages/traditional.html">Explore Traditional</a>
-      </div>
-    </div>
-  </section>
+<section id="projects">
+  <h3>Our Projects</h3>
+  <div class="portfolio">
+    <div class="project"><img src="assets/modern1.jpg"></div>
+    <div class="project"><img src="assets/modern2.jpg"></div>
+    <div class="project"><img src="assets/trad1.jpg"></div>
+    <div class="project"><img src="assets/trad2.jpg"></div>
+  </div>
+</section>
 
-  <!-- Projects Section -->
-  <section id="portfolio">
-    <h3>Our Projects</h3>
-    <div class="portfolio">
-      <div class="project">
-        <img src="/VasDharaDesignStudio/assets/project1.jpg" alt="Modern Residence">
-        <div class="project-caption">Modern Residence</div>
-      </div>
-      <div class="project">
-        <img src="/VasDharaDesignStudio/assets/project2.jpg" alt="Cozy Café Interior">
-        <div class="project-caption">Cozy Café Interior</div>
-      </div>
-      <div class="project">
-        <img src="/VasDharaDesignStudio/assets/project3.jpg" alt="Office Renovation">
-        <div class="project-caption">Office Renovation</div>
-      </div>
-    </div>
-  </section>
+<footer>
+  <div>© <span id="year"></span> VasDhara Design Studio</div>
+  <div>Designed with ♥ by VasDhara</div>
+</footer>
 
-  <footer>
-    <div>© <span id="year"></span> VasDhara Design Studio</div>
-    <div>Designed with ♥ by VasDhara</div>
-  </footer>
-</div>
-
-<!-- WhatsApp Button -->
-<div class="floating-whatsapp" id="whatsapp-btn">
-  <img src="/VasDharaDesignStudio/assets/whatsapp.png">
-</div>
-
-<script src="/VasDharaDesignStudio/js/main.js"></script>
+<div class="floating-whatsapp" id="whatsapp-btn"><img src="assets/whatsapp.png"></div>
+<script src="js/main.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
