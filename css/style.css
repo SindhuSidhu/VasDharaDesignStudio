@@ -17,6 +17,23 @@ header{display:flex;align-items:center;justify-content:space-between;padding:18p
 nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600;}
 nav a:hover{color:var(--accent);}
 
+.project{position:relative;overflow:hidden;border-radius:12px;cursor:pointer;}
+.project img{display:block;width:100%;height:100%;transition:transform 0.5s;object-fit:cover;}
+.project:hover img{transform:scale(1.05);}
+.project-caption{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:8px;
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  font-weight:600;
+  text-align:center;
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+}
+
 .hero{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}
 .hero img{width:100%;border-radius:12px;opacity:0;transform:translateY(20px);transition:0.8s;}
 .hero h2,.hero p,.hero .cta{opacity:0;transform:translateY(20px);transition:0.8s;}
