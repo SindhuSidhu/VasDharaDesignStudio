@@ -1,14 +1,11 @@
-// WhatsApp floating button
 document.getElementById('whatsapp-btn')?.addEventListener('click',()=>window.open('https://wa.me/919876543210','_blank'));
 
-// Wizard Form
 function initWizard(formId, style){
   const form = document.getElementById(formId);
   if(!form) return;
   const steps = form.querySelectorAll('.step');
   let currentStep=0;
   const reviewDiv = document.getElementById('reviewDetails');
-  const planResults = document.getElementById('planResults');
   showStep(currentStep);
 
   function showStep(step){
@@ -39,8 +36,7 @@ function initWizard(formId, style){
 
   form.addEventListener('submit',e=>{
     e.preventDefault();
-    const data={}; Array.from(form.elements).forEach(el=>{ if(el.name) data[el.name]=el.value; });
-    // Redirect to 2D viewer page with parameters
+    // redirect to 2D viewer page
     const planStyle = style==='Modern'?'modern':'trad';
     const planUrl = `/VasDharaDesignStudio/pages/2dviewer.html?style=${planStyle}`;
     window.location.href = planUrl;
