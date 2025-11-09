@@ -8,9 +8,10 @@
 </head>
 <body>
 <div class="container">
+
 <header>
   <div class="brand">
-    <div class="logo"><img src="assets/logo.png" alt="Logo"></div>
+    <img src="assets/logo.png" class="logo" alt="VasDhara Logo">
     <h1>VasDhara Design Studio</h1>
   </div>
   <nav>
@@ -21,19 +22,18 @@
   </nav>
 </header>
 
-<section class="fade-in hero">
-  <img src="assets/hero-lux1.jpg" alt="Luxury Architecture">
-  <h2>Luxury Architecture & Interiors</h2>
-  <p>Creating spaces that flow with life and aesthetics.</p>
+<section class="hero fade-in" style="background: url('assets/hero-lux1.jpg') center/cover no-repeat;">
+  <h2>Designing Spaces that Flow with Life</h2>
+  <p>Luxury architecture, interiors, and construction services</p>
+  <a class="cta" href="pages/contact.html">Get Consultation</a>
 </section>
 
-<section id="projects" class="fade-in">
+<section class="fade-in">
   <h3>Our Projects</h3>
   <div class="portfolio">
-    <div class="project"><img src="assets/modern1.jpg"><span>Modern Villa - Open Space</span></div>
-    <div class="project"><img src="assets/modern2.jpg"><span>Luxury Apartment - City View</span></div>
-    <div class="project"><img src="assets/trad1.jpg"><span>Traditional House - Courtyard</span></div>
-    <div class="project"><img src="assets/trad2.jpg"><span>Heritage Home - Classic Style</span></div>
+    <div class="project"><img src="assets/project1.jpg" alt=""><span>Modern Residence</span></div>
+    <div class="project"><img src="assets/project2.jpg" alt=""><span>Cozy Café Interior</span></div>
+    <div class="project"><img src="assets/project3.jpg" alt=""><span>Office Renovation</span></div>
   </div>
 </section>
 
@@ -42,7 +42,10 @@
   <div>Designed with ♥ by VasDhara</div>
 </footer>
 
-<div class="floating-whatsapp" id="whatsapp-btn"><img src="assets/whatsapp.png" alt="WhatsApp"></div>
+<div class="floating-whatsapp" id="whatsapp-btn">
+  <img src="assets/whatsapp.png" alt="WhatsApp">
+</div>
+
 <script src="js/main.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
