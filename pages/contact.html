@@ -10,7 +10,7 @@
 <div class="container">
 <header>
   <div class="brand">
-    <div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png"></div>
+    <div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png" alt="VasDhara Logo"></div>
     <h1>VasDhara Design Studio</h1>
   </div>
   <nav>
@@ -21,13 +21,17 @@
   </nav>
 </header>
 
-<section class="fade-in hero">
+<!-- Hero Section -->
+<section class="fade-in hero" style="background: url('/VasDharaDesignStudio/assets/hero-lux1.jpg') center/cover no-repeat; height: 350px; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-shadow: 0 2px 10px rgba(0,0,0,0.6); border-radius:12px;">
   <h2>Contact Us</h2>
-  <p>Get in touch to start designing your dream home.</p>
+  <p>Start designing your dream home with us</p>
 </section>
 
-<section id="contact" class="fade-in" style="display:flex;gap:20px;flex-wrap:wrap;">
-  <div class="contact-card" style="flex:1;min-width:300px;">
+<!-- Contact Cards Section -->
+<section id="contact" class="fade-in" style="margin-top:40px; display:flex; gap:30px; flex-wrap:wrap;">
+  <!-- Contact Form -->
+  <div class="contact-card" style="flex:1; min-width:320px; background: rgba(255,255,255,0.85); padding:28px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+    <h3>Send a Message</h3>
     <form id="contactForm">
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Email" required>
@@ -35,19 +39,32 @@
       <button type="submit">Send Message</button>
     </form>
   </div>
-  <div class="contact-card" style="flex:1;min-width:300px;">
-    <h4>Our Office</h4>
+
+  <!-- Contact Info -->
+  <div class="contact-card" style="flex:1; min-width:320px; background: rgba(255,255,255,0.85); padding:28px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+    <h3>Our Office</h3>
     <p>East Street, Coimbatore</p>
-    <h4>Call Us</h4>
-    <p>9585281602</p>
-    <h4>Email</h4>
+    <h3>Call Us</h3>
+    <p>9876543210</p>
+    <h3>Email</h3>
     <p>vasdharadesignstudio@gmail.com</p>
-    <h4>Map</h4>
-    <iframe src="https://www.google.com/maps?q=East+Street+Coimbatore&output=embed" style="width:100%;height:200px;border:0;border-radius:10px;"></iframe>
+    <h3>Find Us</h3>
+    <iframe src="https://www.google.com/maps?q=East+Street+Coimbatore&output=embed" style="width:100%;height:220px;border:0;border-radius:12px;"></iframe>
   </div>
 </section>
 
-<div class="floating-whatsapp" id="whatsapp-btn"><img src="/VasDharaDesignStudio/assets/whatsapp.png"></div>
+<!-- Footer -->
+<footer class="fade-in" style="margin-top:50px;">
+  <div>© <span id="year"></span> VasDhara Design Studio</div>
+  <div>Designed with ♥ by VasDhara</div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<div class="floating-whatsapp" id="whatsapp-btn"><img src="/VasDharaDesignStudio/assets/whatsapp.png" alt="WhatsApp"></div>
+
 <script src="/VasDharaDesignStudio/js/main.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
