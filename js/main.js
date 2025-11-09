@@ -1,64 +1,53 @@
-// Floating WhatsApp
-document.getElementById('whatsapp-btn')?.addEventListener('click',()=>window.open('https://wa.me/919876543210','_blank'));
-
-// Fade-in on scroll
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold:0.2, rootMargin:"0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry=>{
-    if(!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
-    observer.unobserve(entry.target);
-  });
-}, appearOptions);
-faders.forEach(fader=>appearOnScroll.observe(fader));
-
-// Wizard (Modern/Traditional)
-function initWizard(formId, style){
-  const form = document.getElementById(formId);
-  if(!form) return;
-  const steps = form.querySelectorAll('.step');
-  let currentStep=0;
-  const reviewDiv = document.getElementById('reviewDetails');
-  showStep(currentStep);
-
-  function showStep(step){
-    steps.forEach((s,i)=> s.classList.toggle('step-active', i===step));
-  }
-
-  form.querySelectorAll('.nextBtn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      if(currentStep<steps.length-1){ currentStep++; showStep(currentStep); if(currentStep===2) fillReview(); }
+document.addEventListener("DOMContentLoaded", () => {
+  // Fade-in elements
+  const faders = document.querySelectorAll(".fade-in");
+  const appearOptions = { threshold: 0, rootMargin: "0px 0px -100px 0px" };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("appear");
+      observer.unobserve(entry.target);
     });
-  });
-  form.querySelectorAll('.prevBtn').forEach(btn=>{
-    btn.addEventListener('click',()=>{ if(currentStep>0){ currentStep--; showStep(currentStep); } });
-  });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
 
-  function fillReview(){
-    let html='<ul>';
-    Array.from(form.elements).forEach(el=>{ if(el.name) html+=`<li><strong>${el.name}</strong>: ${el.value}</li>`; });
-    html+='</ul>';
-    reviewDiv.innerHTML=html;
+  // Step-by-step planner form
+  const form = document.querySelector("form");
+  if (form) {
+    let currentStep = 0;
+    const steps = form.querySelectorAll(".step");
+    const nextBtns = form.querySelectorAll(".nextBtn");
+    const prevBtns = form.querySelectorAll(".prevBtn");
+
+    function showStep(index) {
+      steps.forEach((step, i) => step.classList.toggle("step-active", i === index));
+    }
+    showStep(currentStep);
+
+    nextBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    prevBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      // Collect data and redirect to 2D viewer page
+      const formData = new FormData(form);
+      const query = new URLSearchParams(formData).toString();
+      window.location.href = "2dviewer.html?" + query;
+    });
   }
-
-  form.addEventListener('submit',e=>{
-    e.preventDefault();
-    const planStyle = style==='Modern'?'modern':'trad';
-    window.location.href = `/VasDharaDesignStudio/pages/2dviewer.html?style=${planStyle}`;
-  });
-}
-
-// Initialize wizards
-initWizard('plannerFormModern','Modern');
-initWizard('plannerFormTrad','Traditional');
-
-// AI 2D Placeholder
-function generateAI2DPlans(data){
-  const plans = [
-    "/VasDharaDesignStudio/assets/modern2d1.png",
-    "/VasDharaDesignStudio/assets/modern2d2.png",
-    "/VasDharaDesignStudio/assets/modern2d3.png"
-  ];
-  return plans;
-}
+});
