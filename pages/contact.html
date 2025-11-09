@@ -3,60 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us - VasDhara Design Studio</title>
+<title>Contact Us | VasDhara</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<header>
-  <div class="brand">
-    <img src="../assets/logo.png" class="logo" alt="VasDhara Logo">
-    <h1>VasDhara Design Studio</h1>
-  </div>
+
+<header class="navbar transparent">
+  <img src="../assets/logo.png" alt="VasDhara Logo" class="logo">
   <nav>
     <a href="../index.html">Home</a>
     <a href="modern.html">Modern</a>
     <a href="traditional.html">Traditional</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
   </nav>
 </header>
 
-<section class="hero fade-in" style="background:url('../assets/hero-lux1.jpg') center/cover no-repeat;">
-  <h2>Contact Us</h2>
-  <p>Start designing your dream home with us</p>
+<section class="hero" style="background-image:url('../assets/hero-lux1.jpg');">
+  <div class="hero-content fade-in">
+    <h1>Contact VasDhara Design Studio</h1>
+    <p>We’d love to hear about your project. Reach out to us for a consultation.</p>
+  </div>
 </section>
 
-<section class="fade-in" style="margin-top:40px; display:flex; gap:30px; flex-wrap:wrap;">
-  <div class="contact-card">
-    <h3>Send a Message</h3>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-  <div class="contact-card">
-    <h3>Our Office</h3>
-    <p>East Street, Coimbatore</p>
-    <h3>Call Us</h3>
-    <p>9876543210</p>
-    <h3>Email</h3>
-    <p>vasdharadesignstudio@gmail.com</p>
-    <iframe src="https://www.google.com/maps?q=East+Street+Coimbatore&output=embed" style="width:100%;height:220px;border:0;border-radius:12px;"></iframe>
-  </div>
+<section class="section fade-in">
+  <h2>Send Us a Message</h2>
+  <form action="https://formspree.io/f/mnqlkqoe" method="POST" class="fade-in">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Email Address" required>
+    <input type="text" name="project" placeholder="Project Type (e.g., Modern Villa)" required>
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<section class="section fade-in">
+  <h2>Our Office</h2>
+  <p>East Street, Coimbatore, Tamil Nadu</p>
+  <p>Phone: +91 9876543210</p>
+  <p>Email: vasdharadesignstudio@gmail.com</p>
 </section>
 
 <footer class="fade-in">
-  <div>© <span id="year"></span> VasDhara Design Studio</div>
-  <div>Designed with ♥ by VasDhara</div>
+  <p>© <span id="year"></span> VasDhara Design Studio | East Street, Coimbatore | +91 9876543210 | vasdharadesignstudio@gmail.com</p>
 </footer>
 
-<div class="floating-whatsapp" id="whatsapp-btn">
+<a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float">
   <img src="../assets/whatsapp.png" alt="WhatsApp">
-</div>
+</a>
 
-<script src="../js/main.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
