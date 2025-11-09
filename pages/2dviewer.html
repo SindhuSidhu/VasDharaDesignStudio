@@ -3,28 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2D Plan Viewer</title>
+<title>2D Floor Plan Viewer</title>
 <link rel="stylesheet" href="/VasDharaDesignStudio/css/style.css">
 </head>
 <body>
 <div class="container">
 <header>
   <div class="brand"><div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png"></div><h1>VasDhara Design Studio</h1></div>
-  <nav>
-    <a href="/VasDharaDesignStudio/index.html">Home</a>
-  </nav>
+  <nav><a href="/VasDharaDesignStudio/index.html">Home</a></nav>
 </header>
 
 <section>
-  <h2>2D Floor Plan</h2>
-  <div id="planContainer" style="width:100%;text-align:center;">
-    <img src="" id="planImg" style="max-width:600px;border:1px solid #ccc;border-radius:8px;">
+  <h2>2D Floor Plans</h2>
+  <div id="planContainer" style="display:flex;gap:20px;flex-wrap:wrap;">
+    <img src="/VasDharaDesignStudio/assets/modern2d1.png" onclick="go3D(this.src)" style="cursor:pointer;width:250px;border-radius:10px;">
+    <img src="/VasDharaDesignStudio/assets/modern2d2.png" onclick="go3D(this.src)" style="cursor:pointer;width:250px;border-radius:10px;">
+    <img src="/VasDharaDesignStudio/assets/modern2d3.png" onclick="go3D(this.src)" style="cursor:pointer;width:250px;border-radius:10px;">
   </div>
 </section>
+
 <script>
-const params = new URLSearchParams(window.location.search);
-const plan = params.get('plan');
-if(plan) document.getElementById('planImg').src = plan;
+function go3D(plan){
+  window.location.href='/VasDharaDesignStudio/pages/3dviewer.html?plan='+encodeURIComponent(plan);
+}
 </script>
 </body>
 </html>
