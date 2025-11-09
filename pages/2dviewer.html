@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2D Planner | VasDhara</title>
+<title>2D Plan | VasDhara</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -18,51 +18,26 @@
   </nav>
 </header>
 
-<section class="hero" style="background-image:url('../assets/hero-lux1.jpg');">
-  <div class="hero-content fade-in">
-    <h1>Your 2D Plans</h1>
-    <p>Select a design to proceed to 3D view</p>
-  </div>
-</section>
-
 <section class="section fade-in">
-  <h2>Generated 2D Options</h2>
+  <h2>Your 2D Plan Options</h2>
+  <p>Here are some AI-generated floor plans based on your inputs.</p>
+
   <div class="projects-grid">
-    <div class="project-card" onclick="selectPlan('plan1')">
-      <img src="../assets/modern1.jpg" alt="2D Plan Option 1">
-      <div class="project-info">
-        <h3>Option 1</h3>
-        <p>Modern layout optimized for space & lighting</p>
-      </div>
+    <div class="project-card" onclick="goto3D()">
+      <img src="../assets/modern1.jpg" alt="">
+      <p>Option A - Open Layout</p>
     </div>
-    <div class="project-card" onclick="selectPlan('plan2')">
-      <img src="../assets/modern2.jpg" alt="2D Plan Option 2">
-      <div class="project-info">
-        <h3>Option 2</h3>
-        <p>Open-plan living with luxurious interiors</p>
-      </div>
-    </div>
-    <div class="project-card" onclick="selectPlan('plan3')">
-      <img src="../assets/modern3.jpg" alt="2D Plan Option 3">
-      <div class="project-info">
-        <h3>Option 3</h3>
-        <p>Family-friendly layout with ample natural light</p>
-      </div>
+    <div class="project-card" onclick="goto3D()">
+      <img src="../assets/modern2.jpg" alt="">
+      <p>Option B - Compact Design</p>
     </div>
   </div>
 </section>
-
-<footer class="fade-in">
-  <p>© <span id="year"></span> VasDhara Design Studio</p>
-</footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  function selectPlan(planId) {
-    // Pass selected plan to 3D viewer page
-    window.location.href = '3dviewer.html?plan=' + planId;
-  }
+function goto3D() {
+  window.location.href = '3dviewer.html';
+}
 </script>
 </body>
 </html>
