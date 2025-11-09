@@ -3,29 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2D Floor Plan Viewer</title>
-<link rel="stylesheet" href="/VasDharaDesignStudio/css/style.css">
+<title>2D Plans - VasDhara Design Studio</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <div class="container">
 <header>
-  <div class="brand"><div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png"></div><h1>VasDhara Design Studio</h1></div>
-  <nav><a href="/VasDharaDesignStudio/index.html">Home</a></nav>
+  <div class="brand">
+    <img src="../assets/logo.png" class="logo" alt="VasDhara Logo">
+    <h1>VasDhara Design Studio</h1>
+  </div>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="modern.html">Modern</a>
+    <a href="traditional.html">Traditional</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
-<section>
-  <h2>2D Floor Plans</h2>
-  <div id="planContainer" style="display:flex;gap:20px;flex-wrap:wrap;">
-    <img src="/VasDharaDesignStudio/assets/modern2d1.png" onclick="go3D(this.src)" style="cursor:pointer;width:250px;border-radius:10px;">
-    <img src="/VasDharaDesignStudio/assets/modern2d2.png" onclick="go3D(this.src)" style="cursor:pointer;width:250px;border-radius:10px;">
-    <img src="/VasDharaDesignStudio/assets/modern2d3.png" onclick="go3D(this.src)" style="cursor:pointer;width:250px;border-radius:10px;">
+<section class="hero fade-in" style="background:url('../assets/modern-hero.jpg') center/cover no-repeat;">
+  <h2>2D Plans</h2>
+  <p>Select a plan to generate 3D view</p>
+</section>
+
+<section class="fade-in">
+  <div class="portfolio" id="plansContainer">
+    <!-- Placeholder images -->
+    <div class="project"><img src="../assets/modern1.jpg" alt=""><span>Option 1</span></div>
+    <div class="project"><img src="../assets/modern2.jpg" alt=""><span>Option 2</span></div>
+    <div class="project"><img src="../assets/modern3.jpg" alt=""><span>Option 3</span></div>
   </div>
 </section>
 
-<script>
-function go3D(plan){
-  window.location.href='/VasDharaDesignStudio/pages/3dviewer.html?plan='+encodeURIComponent(plan);
-}
-</script>
+<footer class="fade-in">
+  <div>© <span id="year"></span> VasDhara Design Studio</div>
+  <div>Designed with ♥ by VasDhara</div>
+</footer>
+
+<div class="floating-whatsapp" id="whatsapp-btn">
+  <img src="../assets/whatsapp.png" alt="WhatsApp">
+</div>
+
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
