@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2D Plan Viewer</title>
+<link rel="stylesheet" href="/VasDharaDesignStudio/css/style.css">
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="brand"><div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png"></div><h1>VasDhara Design Studio</h1></div>
+  <nav>
+    <a href="/VasDharaDesignStudio/index.html">Home</a>
+  </nav>
+</header>
+
+<section>
+  <h2>2D Floor Plan</h2>
+  <div id="planContainer" style="width:100%;text-align:center;">
+    <img src="" id="planImg" style="max-width:600px;border:1px solid #ccc;border-radius:8px;">
+  </div>
+</section>
+<script>
+const params = new URLSearchParams(window.location.search);
+const plan = params.get('plan');
+if(plan) document.getElementById('planImg').src = plan;
+</script>
+</body>
+</html>
