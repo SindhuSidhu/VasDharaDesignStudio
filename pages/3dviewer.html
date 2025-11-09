@@ -3,42 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3D Viewer | VasDhara</title>
-<link rel="stylesheet" href="../css/style.css">
+<title>3D Viewer | VasDhara Design Studio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="navbar">
-  <img src="../assets/logo.png" alt="VasDhara Logo" class="logo">
+  <img src="assets/logo.png" alt="VasDhara Logo" class="logo">
   <nav>
-    <a href="../index.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="modern.html">Modern</a>
     <a href="traditional.html">Traditional</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="hero" style="background-image:url('../assets/hero-lux1.jpg');">
-  <div class="hero-content fade-in">
-    <h1>Your 3D View</h1>
-    <p>Explore your selected plan in interactive 3D</p>
-  </div>
-</section>
-
 <section class="section fade-in">
-  <h2>3D Plan Viewer</h2>
-  <p>Currently showing a sample 3D model. Integration with AI-generated 3D models will come next.</p>
-  <div style="text-align:center;">
-    <img src="../assets/modern4.jpg" alt="3D Plan Sample" style="max-width:100%;border-radius:12px;">
+  <h2>Your 3D Plan</h2>
+  <p>Below is a preview of the 3D view for your selected 2D plan.</p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="assets/modern3d.jpg" alt="3D View">
+      <div class="project-info">
+        <h3>3D Plan</h3>
+        <p>Interactive 3D visualization coming soon</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer class="fade-in">
+<footer>
   <p>© <span id="year"></span> VasDhara Design Studio</p>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
