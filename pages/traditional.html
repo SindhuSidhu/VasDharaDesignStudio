@@ -8,63 +8,76 @@
 </head>
 <body>
 <div class="container">
-  <header>
-    <div class="brand">
-      <div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png" style="width:50px;"></div>
-      <h1>VasDhara Design Studio</h1>
+<header>
+  <div class="brand">
+    <div class="logo"><img src="/VasDharaDesignStudio/assets/logo.png" style="width:50px;"></div>
+    <h1>VasDhara Design Studio</h1>
+  </div>
+  <nav>
+    <a href="/VasDharaDesignStudio/index.html">Home</a>
+    <a href="/VasDharaDesignStudio/pages/modern.html">Modern</a>
+    <a href="/VasDharaDesignStudio/pages/traditional.html">Traditional</a>
+    <a href="/VasDharaDesignStudio/pages/contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="/VasDharaDesignStudio/assets/trad-hero.jpg" style="width:100%;border-radius:12px;">
+  <div>
+    <h2>Traditional Home Designs</h2>
+    <p class="lead">Classic, timeless layouts with warm interiors, cultural elements, and harmony with nature.</p>
+  </div>
+</section>
+
+<section id="planner">
+  <h3>Design Your Traditional Home</h3>
+  <form id="plannerFormTrad">
+    <input type="number" name="length" placeholder="Plot Length (ft)" required>
+    <input type="number" name="width" placeholder="Plot Width (ft)" required>
+    <input type="number" name="bhk" placeholder="BHK (2,3,4)" required>
+    <select name="style">
+      <option value="Traditional" selected>Traditional</option>
+      <option value="Modern">Modern</option>
+    </select>
+    <textarea name="requirements" rows="4" placeholder="Special Requirements"></textarea>
+    <button type="submit">Generate 2D Plan</button>
+  </form>
+  <div id="planResultsTrad" style="margin-top:20px;"></div>
+</section>
+
+<section id="portfolio">
+  <h3>Our Traditional Projects</h3>
+  <div class="portfolio">
+    <div class="project">
+      <img src="/VasDharaDesignStudio/assets/trad1.jpg" alt="Traditional Villa">
+      <div class="project-caption">Traditional Villa</div>
     </div>
-    <nav>
-      <a href="/VasDharaDesignStudio/index.html">Home</a>
-      <a href="/VasDharaDesignStudio/pages/modern.html">Modern</a>
-      <a href="/VasDharaDesignStudio/pages/traditional.html">Traditional</a>
-      <a href="/VasDharaDesignStudio/pages/contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <img src="/VasDharaDesignStudio/assets/trad-hero.jpg" style="width:100%;border-radius:12px;">
-    <div>
-      <h2>Traditional Home Designs</h2>
-      <p class="lead">Classic layouts with rich heritage aesthetics and functional spaces.</p>
+    <div class="project">
+      <img src="/VasDharaDesignStudio/assets/trad2.jpg" alt="Heritage Home">
+      <div class="project-caption">Heritage Home</div>
     </div>
-  </section>
-
-  <section id="planner">
-    <h3>Design Your Traditional Home</h3>
-    <form id="plannerForm">
-      <input type="number" name="length" placeholder="Plot Length (ft)" required>
-      <input type="number" name="width" placeholder="Plot Width (ft)" required>
-      <input type="number" name="bhk" placeholder="BHK (2,3,4)" required>
-      <select name="style">
-        <option value="Traditional" selected>Traditional</option>
-        <option value="Modern">Modern</option>
-      </select>
-      <textarea name="requirements" rows="4" placeholder="Special Requirements"></textarea>
-      <button type="submit">Generate 2D Plan</button>
-    </form>
-    <div id="planResults" style="margin-top:20px;"></div>
-  </section>
-
-  <section id="portfolio">
-    <h3>Our Projects</h3>
-    <div class="portfolio">
-      <div class="project">Heritage Villa</div>
-      <div class="project">Temple-style Interiors</div>
-      <div class="project">Courtyard Home</div>
+    <div class="project">
+      <img src="/VasDharaDesignStudio/assets/trad3.jpg" alt="Temple Inspired Home">
+      <div class="project-caption">Temple Inspired Home</div>
     </div>
-  </section>
+    <div class="project">
+      <img src="/VasDharaDesignStudio/assets/trad4.jpg" alt="Courtyard Villa">
+      <div class="project-caption">Courtyard Villa</div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <div>© <span id="year"></span> VasDhara Design Studio</div>
-    <div>Designed with ♥ by VasDhara</div>
-  </footer>
+<footer>
+  <div>© <span id="year"></span> VasDhara Design Studio</div>
+  <div>Designed with ♥ by VasDhara</div>
+</footer>
 </div>
 
 <div class="floating-whatsapp" id="whatsapp-btn"><img src="/VasDharaDesignStudio/assets/whatsapp.png"></div>
 <script src="/VasDharaDesignStudio/js/main.js"></script>
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-submitPlanner('plannerForm','planResults');
+document.getElementById('year').textContent = new Date().getFullYear();
+submitPlanner('plannerFormTrad','planResultsTrad');
 </script>
 </body>
 </html>
