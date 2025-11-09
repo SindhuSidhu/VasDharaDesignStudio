@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern Designs - VasDhara Design Studio</title>
+<title>Modern Home Designs - VasDhara Design Studio</title>
 <link rel="stylesheet" href="/VasDharaDesignStudio/css/style.css">
 </head>
 <body>
@@ -23,59 +23,74 @@
 
 <section class="hero">
   <img src="/VasDharaDesignStudio/assets/modern-hero.jpg" style="width:100%;border-radius:12px;">
-  <div>
-    <h2>Modern Home Designs</h2>
-    <p class="lead">Sleek, contemporary layouts with optimal space usage and aesthetics.</p>
-  </div>
+  <h2>Modern Home Designs</h2>
+  <p>Sleek, contemporary layouts with optimal space usage and aesthetics.</p>
 </section>
 
+<!-- Wizard Planner Form -->
 <section id="planner">
   <h3>Design Your Modern Home</h3>
-  <form id="plannerFormModern">
-    <!-- Plot Details -->
-    <input type="number" name="lengthNorth" placeholder="North Side Length (ft)" required>
-    <input type="number" name="lengthSouth" placeholder="South Side Length (ft)" required>
-    <input type="number" name="lengthEast" placeholder="East Side Length (ft)" required>
-    <input type="number" name="lengthWest" placeholder="West Side Length (ft)" required>
-    <select name="orientation">
-      <option value="North">North Facing</option>
-      <option value="South">South Facing</option>
-      <option value="East">East Facing</option>
-      <option value="West">West Facing</option>
-    </select>
+  <form id="plannerFormModern" class="wizard">
+    <!-- Step 1: Plot Details -->
+    <div class="step step-active">
+      <h4>Step 1: Plot Details</h4>
+      <input type="number" name="lengthNorth" placeholder="North Side Length (ft)" required>
+      <input type="number" name="lengthSouth" placeholder="South Side Length (ft)" required>
+      <input type="number" name="lengthEast" placeholder="East Side Length (ft)" required>
+      <input type="number" name="lengthWest" placeholder="West Side Length (ft)" required>
+      <select name="orientation">
+        <option value="North">North Facing</option>
+        <option value="South">South Facing</option>
+        <option value="East">East Facing</option>
+        <option value="West">West Facing</option>
+      </select>
+      <button type="button" class="nextBtn">Next</button>
+    </div>
 
-    <!-- House Requirements -->
-    <input type="number" name="bhk" placeholder="Number of BHK" required>
-    <label>Draw plan as Vastu?
-      <select name="vastu">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-    </label>
-    <label>Pooja Room Required?
-      <select name="pooja">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-    </label>
-    <label>Additional Rooms? 
-      <input type="text" name="additionalRooms" placeholder="Specify if any">
-    </label>
-    <input type="number" name="floors" placeholder="Number of Floors" required>
-    <label>Parking Required?
-      <select name="parking">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-    </label>
-    <label>Compound Wall Required?
-      <select name="compoundWall">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-    </label>
-    <textarea name="requirements" rows="4" placeholder="Any special requirements / comments"></textarea>
-    <button type="submit">Generate 2D Plans</button>
+    <!-- Step 2: House Requirements -->
+    <div class="step">
+      <h4>Step 2: House Requirements</h4>
+      <input type="number" name="bhk" placeholder="Number of BHK" required>
+      <label>Draw plan as Vastu?
+        <select name="vastu">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </label>
+      <label>Pooja Room Required?
+        <select name="pooja">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </label>
+      <label>Additional Rooms? 
+        <input type="text" name="additionalRooms" placeholder="Specify if any">
+      </label>
+      <input type="number" name="floors" placeholder="Number of Floors" required>
+      <label>Parking Required?
+        <select name="parking">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </label>
+      <label>Compound Wall Required?
+        <select name="compoundWall">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </label>
+      <textarea name="requirements" rows="4" placeholder="Any special requirements / comments"></textarea>
+      <button type="button" class="prevBtn">Previous</button>
+      <button type="button" class="nextBtn">Next</button>
+    </div>
+
+    <!-- Step 3: Review & Generate -->
+    <div class="step">
+      <h4>Step 3: Review & Generate 2D Plans</h4>
+      <div id="reviewDetails"></div>
+      <button type="button" class="prevBtn">Previous</button>
+      <button type="submit">Generate Plans</button>
+    </div>
   </form>
 
   <div id="planResults" style="margin-top:20px;"></div>
@@ -84,10 +99,10 @@
 <section id="portfolio">
   <h3>Our Modern Projects</h3>
   <div class="portfolio">
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern1.jpg" alt="Modern Home 1"></div>
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern2.jpg" alt="Modern Home 2"></div>
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern3.jpg" alt="Modern Home 3"></div>
-    <div class="project"><img src="/VasDharaDesignStudio/assets/modern4.jpg" alt="Modern Home 4"></div>
+    <div class="project"><img src="/VasDharaDesignStudio/assets/modern1.jpg"></div>
+    <div class="project"><img src="/VasDharaDesignStudio/assets/modern2.jpg"></div>
+    <div class="project"><img src="/VasDharaDesignStudio/assets/modern3.jpg"></div>
+    <div class="project"><img src="/VasDharaDesignStudio/assets/modern4.jpg"></div>
   </div>
 </section>
 
@@ -95,13 +110,9 @@
   <div>© <span id="year"></span> VasDhara Design Studio</div>
   <div>Designed with ♥ by VasDhara</div>
 </footer>
-</div>
 
 <div class="floating-whatsapp" id="whatsapp-btn"><img src="/VasDharaDesignStudio/assets/whatsapp.png"></div>
-
 <script src="/VasDharaDesignStudio/js/main.js"></script>
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
