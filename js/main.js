@@ -1,6 +1,7 @@
+// Floating WhatsApp
 document.getElementById('whatsapp-btn')?.addEventListener('click',()=>window.open('https://wa.me/919876543210','_blank'));
 
-// Fade-in
+// Fade-in on scroll
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = { threshold:0.2, rootMargin:"0px 0px -50px 0px" };
 const appearOnScroll = new IntersectionObserver(function(entries, observer){
@@ -12,7 +13,7 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer){
 }, appearOptions);
 faders.forEach(fader=>appearOnScroll.observe(fader));
 
-// Wizard
+// Wizard (Modern/Traditional)
 function initWizard(formId, style){
   const form = document.getElementById(formId);
   if(!form) return;
@@ -43,16 +44,16 @@ function initWizard(formId, style){
 
   form.addEventListener('submit',e=>{
     e.preventDefault();
-    // redirect to 2D viewer
     const planStyle = style==='Modern'?'modern':'trad';
     window.location.href = `/VasDharaDesignStudio/pages/2dviewer.html?style=${planStyle}`;
   });
 }
 
+// Initialize wizards
 initWizard('plannerFormModern','Modern');
 initWizard('plannerFormTrad','Traditional');
 
-// Placeholder AI 2D generation
+// AI 2D Placeholder
 function generateAI2DPlans(data){
   const plans = [
     "/VasDharaDesignStudio/assets/modern2d1.png",
